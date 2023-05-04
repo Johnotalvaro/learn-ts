@@ -43,10 +43,77 @@ let students: Array<string | null> = ['Nico', 'Jhon', null, 'Rayffer', null, 'An
 console.log(students.filter((students) => students !== null));
 
 // Tuples
-let exampleTuple: [string , null] = [ 'hola', null];
+let exampleTuple: [string, null] = ['hola', null];
 
 
 // Tipos personalizados
 type statusCode = 'active' | 'inactive';
 
 let studentStatus: statusCode = 'inactive';
+
+// Any (Mala práctica)
+let working: any = 25;
+working = 'hola';
+
+// Funciones
+/**
+ * function nombreFuncion(parametro: tipoDato): tipoDatoQueRetornaraLaFuncion()
+ */
+function validateValue(value: unknown): boolean {
+
+    // unknown que es un tipo de dato que es desconocido
+    // para cualquier validación que deba hacer con el dato
+    // debo primero saber o validar que tipo de dato es
+    if (typeof value === 'string') {
+        console.log(value.trim().toLocaleUpperCase());
+    } else if (typeof value === 'number') {
+        console.log(value.toFixed());
+    }
+
+    if (value === '') {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+function getFullName(firstName: string, lastName: string): string {
+    return `${firstName} ${lastName}`;
+}
+
+// void
+function proccessResponsive( saved: boolean ): void {
+    if (saved) {
+        console.log('Guardado');
+    } else {
+        console.log('Ocurrió un error');
+    }
+}
+
+console.log(getFullName(firstName, lastName) );
+proccessResponsive(true);
+
+
+enum Role {
+    Admin = 'ADMIN',
+    Client = 'CLIENT',
+    Users = 'USER',
+    SuperAdmin = 'SUPERADMIN'
+}
+
+let users: Array < { name: string, role: Role } > = [
+    {
+        name: 'Pepito',
+        role: Role.Admin
+    },
+    {
+        name: 'Juanito',
+        role: Role.Client
+    },
+    {
+        name: 'Fulanito',
+        role: Role.Client
+    }
+]
+
+console.log( users.filter( (user) => user.role === Role.Client ) );
