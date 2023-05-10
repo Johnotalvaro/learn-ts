@@ -1,5 +1,6 @@
-import { IPersona } from './interface_persona';
-class Hombre implements IPersona {
+import { IPersona } from "./Interface_persona";
+
+export class Hombre implements IPersona {
     public nombre: string;
     public apellido: string;
     public edad!: number;
@@ -9,7 +10,7 @@ class Hombre implements IPersona {
         this.apellido = apellido ?? '';
     }
 
-    nombre_completo(): string {
+    public nombre_completo(): string {
         return `Su nombre completo es: ${this.nombre} ${this.apellido}.`;
     }
 
@@ -18,16 +19,16 @@ class Hombre implements IPersona {
     }
 }
 
-class Mujer implements IPersona {
-    nombre!: string;
-    apellido!: string;
-    edad!: number;
+export class Mujer implements IPersona {
+    public nombre!: string;
+    public apellido!: string;
+    public edad!: number;
 
-    nombre_completo(): string {
+    public nombre_completo(): string {
         return `Su nombre completo es: ${this.nombre} ${this.apellido}.`;
     }
 
-    public ir_cine( sala:string, pelicula: string ) {
+    public ir_cine( sala:string, pelicula: string ): void {
         console.log(`Viendo ${pelicula} en ${sala}.`);   
     }
 }
