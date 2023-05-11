@@ -14,7 +14,7 @@ export class Hombre implements IPersona {
         return `Su nombre completo es: ${this.nombre} ${this.apellido}.`;
     }
 
-    public hablar_futbol( equipo: string, minutos: string ) {
+    public hablar_futbol( equipo: string, minutos: number ) {
         console.log(`Hablemos sobre el: ${equipo}, ${minutos} minutos, pues está jugando como los dioses.`);
     }
 }

@@ -20,7 +20,4 @@ export abstract class Empleado {
 
     // Firma de un método - Quien use la clase base debe implementar
     public abstract calcularSalario(): number;
-
-
 }
-
