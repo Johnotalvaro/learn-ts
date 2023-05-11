@@ -1,25 +1,25 @@
 export abstract class Construccion {
-    static cantidad_edificios: number = 0;
+    public static cantidad_edificios: number = 0;
     private _pisos: number;
 
     constructor(pisos: number) {
         this._pisos = pisos;
-        Construccion.cantidad_edificios +1;
+        Construccion.cantidad_edificios += 1;
     }
 
     public impuestos(): number {
         return this._pisos * 3000000;
     }
 
-    get pisos(): number {
+    public get pisos(): number {
         return this._pisos;
     }
 
-    set pisos( pisos: number ) {
+    public set pisos( pisos: number ) {
         this._pisos = pisos;
     }
 
-    static edificios_contador(): number {
+    public static edificios_contador(): number {
         return this.cantidad_edificios;
     }
 }
